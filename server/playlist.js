@@ -19,13 +19,15 @@ fs.readFile("server/_token.txt", "utf8", (err, data) => {
     spotifyApi.setAccessToken(data);
 })
 
-router.get("/getUser",async (req,res) =>{
-    const user = await spotifyApi.getMe()
-    const playlists = await spotifyApi.getUserPlaylists(user.body.id)
-    res.send({
-        user:user.body,
-        playlists: playlists.body
+router.post("/getTracksOnPlaylist", async (req,res) =>{
+    const id = req.body.id
+    const tracks = await spotifyApi.getPlaylist(id)
+
+    const tracklist = tracks.body.tracks.items.map(track=>{
+        return track.track.name
     })
+   
+    res.send(tracklist)
 })
 
 module.exports = router

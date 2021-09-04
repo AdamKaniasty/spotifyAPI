@@ -1,0 +1,16 @@
+
+$white: rgb(216, 213, 213);
+
+
+@mixin mainText($size){
+    color:$white;
+    font-size: $size;
+
+}
+
+@mixin unselectable{
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
