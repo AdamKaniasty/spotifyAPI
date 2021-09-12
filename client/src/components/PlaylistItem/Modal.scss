@@ -32,11 +32,23 @@
         position: absolute;
         bottom:1vw;
         right:1vw;
-        width:4vw;
-        height:4vw;
+        width:3vw;
+        height:3vw;
+        color:$green;
+        opacity:0.6;
+        transition: .2s;
+        :first-child{
+            height: inherit;
+            width: inherit;
+        }
+    }
+    .edit:hover{
+        opacity: 1;
+        transform:scale(1.1);
     }
     h1{
         width:23vw;
+        padding:5vh;
         backdrop-filter: blur(.5vw);
         text-align: center;
         position:absolute;

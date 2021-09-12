@@ -30,4 +30,10 @@ router.post("/getTracksOnPlaylist", async (req,res) =>{
     res.send(tracklist)
 })
 
+router.post("/getPlaylist", async (req,res) =>{
+    const id = req.body.id
+    console.log(id)
+    const data = await spotifyApi.getPlaylist(id)   
+    res.send(data.body)
+})
 module.exports = router

@@ -6,10 +6,14 @@ import {
 import Home from "./components/Home/Home.jsx"
 import Login from "./components/Login/Login.jsx"
 import Dashboard from "./components/Dashboard/Dashboard.jsx"
+import PlaylistPage from "./components/PlaylistPage/Page.jsx"
 function App() {
   return (
     <Router className="App">
       <Switch>
+        <Route path="/dashboard/:id">
+          <PlaylistPage />
+        </Route>
         <Route path="/dashboard">
           <Dashboard />
         </Route>

@@ -10,9 +10,9 @@ export default function Dashboard (){
         })
     },[])
 
+    
     return(
         <div className="dashboard">
-            <div className="bg"/>
             <h1>Playlists</h1>
             <div className="playlists">
                 {user && user.playlists.items.map((playlist,index)=>{

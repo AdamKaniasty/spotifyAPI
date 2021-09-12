@@ -1,0 +1,51 @@
+@import "../variables.scss";
+.PlaylistPage{
+    width: 100%;
+    padding-bottom: 1vh;
+    min-height: 100vh;
+    background: rgb(33,33,33);
+    background: linear-gradient(180deg, rgba(33,33,33,1) 0%, rgba(18,18,18,1) 100%);
+
+
+    .title{
+        display: flex;
+        width: 100%;
+        padding-top:10vh;
+        align-items: center;
+        h1{
+            @include mainText(10vh);
+            margin-left:2vh;
+        }
+        img{
+            margin-left:5vh;
+            width:30vh;
+            height:30vh;
+            object-fit: cover;
+        }
+    
+    }
+    .navbar{
+        margin-top:10vh;
+        margin-left:5vh;
+        width:calc(100vw - 10vh);
+        height:5vh;
+        border-bottom:.1vh solid rgba(255, 255, 255, 0.3);
+        display: flex;
+        align-items: center;
+        .btn{
+            margin-left:5vh;
+            cursor: pointer;
+            @include mainText(3vh);
+        }
+        #selected{
+            color:$green;
+
+        }
+    }
+    .modalField{
+        margin-top:2vh;
+        margin-left:5vh;
+        width: calc(100% - 10vh);
+        
+    }
+}

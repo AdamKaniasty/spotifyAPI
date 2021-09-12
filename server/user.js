@@ -27,5 +27,11 @@ router.get("/getUser",async (req,res) =>{
         playlists: playlists.body
     })
 })
+router.get("/playing",async (req,res)=>{
+    const song = await spotifyApi.getMyCurrentPlayingTrack()
+    res.send({
+        song: song.body.item
+    })
+})
 
 module.exports = router

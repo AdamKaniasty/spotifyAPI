@@ -6,7 +6,7 @@ var SpotifyWebApi = require('spotify-web-api-node');
 const scopes = ['user-read-private', 'user-read-email','playlist-read-private',
                 'playlist-modify-private','playlist-read-collaborative'],
     redirectUri = 'http://localhost:3000/user',
-    state = Math.random()*(3974697236472-5365342534)+5365342534,
+    state = Math.round(Math.random()*(3974697236472-5365342534)+5365342534),
     clientId = 'd712b0c67ca6471ead4e8b2287c6e8a9',
     showDialog = false,
     responseType = 'token';
@@ -18,6 +18,7 @@ router.get('/getLoginUrl',(req, res) => {
         clientId: clientId
       });
     var authorizeURL = spotifyApi.createAuthorizeURL(scopes, state,showDialog,responseType);
+    console.log(authorizeURL)
     res.send(authorizeURL)
 })
 router.post('/saveToken',(req, res) => {

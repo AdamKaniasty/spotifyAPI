@@ -1,0 +1,79 @@
+@import "../../variables.scss";
+.TrackPage{
+    display: flex;
+    justify-content: space-around;
+    .tracks{
+        cursor: pointer;
+        width:50vw;
+        @include  unselectable;
+        .track{
+            width:50vw;
+            height:8vh;
+            margin:.1vh;
+            background-color:rgba(59, 57, 57, 0.158);
+            display: flex;
+            align-items: center;
+            :nth-child(1){
+                width:5vh;
+                text-align: center;
+                color:rgba(156, 156, 156, 0.281);
+                font-size:2.5vh;
+                font-weight: 400;
+            }
+            :nth-child(2){
+                width:5vh;
+                height:5vh;
+                margin-right:2vh;
+
+            }
+            .names{
+                width:30vw;
+                height:8vh;
+                display:flex;
+                flex-direction: column;
+                margin-top:2vh;
+                justify-content: space-evenly;
+                :first-child{
+                    color:rgb(131, 129, 129);
+                    white-space: nowrap;
+                    font-size:2.5vh;
+
+                }
+                :nth-child(2){
+                    color:rgb(131, 129, 129);
+                    opacity:0.5;
+                    white-space: nowrap;
+                    font-size:1.5vh;
+
+                }
+            }
+            .time{
+                color:rgb(131, 129, 129);
+                opacity:0.8;
+                white-space: nowrap;
+                font-size:2vh;
+
+            }
+            
+        }
+        .moreInfo{
+            width:50vw;
+            height:30vh;
+            background-color:rgba(59, 57, 57, 0.158);
+            display: flex;
+            align-items: center;
+            img{
+                width:30vh;
+                height: 30vh;
+            }
+        }
+    }
+    .suggested{
+        position:sticky;
+        top:2.5vh;
+        width:40vw;
+        height:95vh;
+        background:rgba(49, 49, 49, 0.308);
+    }
+    
+}
