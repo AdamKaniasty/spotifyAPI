@@ -54,19 +54,12 @@
                 font-size:2vh;
 
             }
-            
+        
         }
-        .moreInfo{
-            width:50vw;
-            height:30vh;
-            background-color:rgba(59, 57, 57, 0.158);
-            display: flex;
-            align-items: center;
-            img{
-                width:30vh;
-                height: 30vh;
-            }
+        .track:hover{
+            background-color:rgba(88, 86, 86, 0.74);
         }
+        
     }
     .suggested{
         position:sticky;

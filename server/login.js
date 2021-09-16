@@ -18,7 +18,6 @@ router.get('/getLoginUrl',(req, res) => {
         clientId: clientId
       });
     var authorizeURL = spotifyApi.createAuthorizeURL(scopes, state,showDialog,responseType);
-    console.log(authorizeURL)
     res.send(authorizeURL)
 })
 router.post('/saveToken',(req, res) => {

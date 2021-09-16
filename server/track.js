@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router()
 const SpotifyWebApi = require('spotify-web-api-node');
 const fs = require('fs');
-
+const axios = require('axios');
 const clientId = 'd712b0c67ca6471ead4e8b2287c6e8a9'
 const clientSecret = 'e4a6089244fb46bd912baeceb42bad99'
 
@@ -19,20 +19,23 @@ fs.readFile("server/_token.txt", "utf8", (err, data) => {
     spotifyApi.setAccessToken(data);
 })
 
-router.post("/getTracksOnPlaylist", async (req,res) =>{
+router.post('/getTrack',async (req, res) => {
     const id = req.body.id
-    const tracks = await spotifyApi.getPlaylist(id)
-
-    const tracklist = tracks.body.tracks.items.map(track=>{
-        return track.track.name
+    const track = await spotifyApi.getAudioFeaturesForTrack(id)
+    fs.readFile("server/_token.txt", "utf8", (err, data) => {
+        const headers = {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            'Authorization': 'Bearer ' + data
+          }
+      
+        axios.get(`https://api.spotify.com/v1/tracks/${id}`,{headers: headers})
+            .then((resp)=>res.send({data:resp.data,features:track.body}))
+    
     })
-   
-    res.send(tracklist)
 })
 
-router.post("/getPlaylist", async (req,res) =>{
-    const id = req.body.id
-    const data = await spotifyApi.getPlaylist(id)   
-    res.send(data.body)
-})
+
+
+
 module.exports = router

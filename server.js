@@ -17,4 +17,8 @@ app.use(user)
 const playlist = require('./server/playlist')
 app.use(playlist)
 
+const track = require('./server/track')
+app.use(track)
 
+const album = require('./server/album')
+app.use(album)

@@ -17,3 +17,14 @@ code {
   padding: 0;
   box-sizing: border-box;
  }
+ ::-webkit-scrollbar {
+  width: .5vh;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, rgba(33,33,33,1) 0%, rgba(18,18,18,1) 100%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:#1ed65ec5;
+}

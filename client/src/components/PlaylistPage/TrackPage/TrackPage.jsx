@@ -30,7 +30,7 @@ export default function Page (props){
                                 <span>{index + 1}</span>
                                 <img src={track.track.album.images[0].url} alt="cover"/>
                                 <div className="names">
-                                    <span>{track.track.name}</span>
+                                    <span>{track.track.name.length < 36 ? track.track.name:track.track.name.slice(0,32)+"..."}</span>
                                     <span>{track.track.artists.map(artist => {return artist.name +" "})}</span>
                                 </div>
                                 <span className="time">{msToTime(track.track.duration_ms)}</span>
@@ -40,7 +40,7 @@ export default function Page (props){
                 })}
             </div>
             <div className="suggested">
-                <Display item={tracks[selected]}/>
+                <Display item={selected !== null ? tracks[selected].track.id:null} type={selected !== null ? 0 : null}/>
             </div>
             
         </div>

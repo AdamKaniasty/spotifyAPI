@@ -10,6 +10,11 @@
         height:5%;
         width:100%;
     }
+    .help{
+        @include mainText(4vh);
+        opacity:0.5;
+        margin-top:50%;  
+    }
     .track{
         height:95%;
         width: 90%;
@@ -34,29 +39,31 @@
             opacity:0.5;
         }
         h2{
-            @include mainText(3.5vh);
-            font-weight: 400;
+            @include mainText(3vh);
+            font-weight: 500;
             color:$green;
             opacity:0.6;
-            min-width:20%;
             text-align: center;
-            border-bottom: .1vh solid $green;
-            margin-bottom: 1vh;
-        }
-        
+            margin-right:1vh;
+        }        
         h3{
             @include mainText(2vh);
             font-weight: 400;
             color:$white;
             opacity:0.6;
+            text-align: center;
+            cursor: pointer;
 
         }
         .artists{
-            width: 100%;
             display: flex;
-            flex-direction: column;
             margin-top:2%;
+            flex-direction: column;
             align-items: center;
+            justify-content:center;
+            h3{
+                margin-right:1vh;
+            }    
         }
         #controls{
             margin-top:5%;
@@ -64,6 +71,127 @@
             height:6vh;
             color:$green;
             opacity:0.6;
+        }
+    }
+    .album{
+        height:95%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img{
+            width:40%;
+            margin-top:5%;
+        }
+        h1{
+            margin-top:2%;
+            @include mainText(4vh);
+            opacity:0.8;
+            text-align: center;
+        }
+        .line{
+            width:90%;
+            height:.1vh;
+            margin-top:2%;
+            background-color:$white;
+            opacity:0.5;
+        }
+        h2{
+            @include mainText(2vh);
+            font-weight: 500;
+            color:$green;
+            opacity:0.6;
+            text-align: center;
+        }        
+        h3{
+            @include mainText(1.8vh);
+            font-weight: 400;
+            color:$white;
+            opacity:0.6;
+            text-align: center;
+
+        }
+        .infoWrapper{
+            display:flex;
+            align-items:last-baseline;
+            justify-content:center;
+            width: 100%;
+            height:auto;
+            margin-top:2vh;
+        }
+        .vLine{
+            height:3vh;
+            width:.1vh;
+            background-color:$white;
+            margin:2vh;
+            margin-top:1.3vh;
+            opacity:0.5;
+        }
+        .tracks{
+            margin-top:3vh;
+            cursor: pointer;
+            width:90%;
+            display: flex;
+            flex-direction: column;
+            @include  unselectable;           
+            .track{
+                width:95%;
+                height:8vh;
+                margin:.1vh;
+                background-color:rgba(59, 57, 57, 0.158);
+                display: flex;
+                flex-direction:row;
+                align-items: center;
+                justify-content:center;
+                :nth-child(1){
+                    width:5vh;
+                    text-align: center;
+                    color:rgba(156, 156, 156, 0.281);
+                    font-size:2.5vh;
+                    font-weight: 400;
+                }
+                :nth-child(2){
+                    width:5vh;
+                    height:5vh;
+                    margin-right:2vh;
+    
+                }
+                .names{
+                    width:30vw;
+                    height:8vh;
+                    display:flex;
+                    flex-direction: column;
+                    margin-top:2vh;
+                    justify-content: space-evenly;
+                    :first-child{
+                        color:rgb(131, 129, 129);
+                        white-space: nowrap;
+                        font-size:2.5vh;
+    
+                    }
+                    :nth-child(2){
+                        color:rgb(131, 129, 129);
+                        opacity:0.5;
+                        white-space: nowrap;
+                        font-size:1.5vh;
+    
+                    }
+                }
+    
+                .time{
+                    color:rgb(131, 129, 129);
+                    opacity:0.8;
+                    white-space: nowrap;
+                    font-size:2vh;
+                    padding-right: 5vh;
+    
+                }
+            
+            }
+            .track:hover{
+                background-color:rgba(88, 86, 86, 0.74);
+            }
+            
         }
     }
 }
