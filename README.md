@@ -1,2 +1,2 @@
 ﻿# spotifyAPI
-website I coded when i learn Node with Express
+Website I coded when I learnt Node with Express
